@@ -21,8 +21,8 @@ function renderGrid(cellsLength) {
       // creo l'elemmento row
       let row = document.createElement("div");
       row.className = "row";
-      // const cells = renderCells(columnsLength, rowIndex); ordinamento progressivo
-      const cells = renderCells(columnsLength, numbers); //ordinamento randomico
+       const cells = renderCells(columnsLength, rowIndex); // ordinamento progressivo
+      // const cells = renderCells(columnsLength, numbers); //ordinamento randomico
       row.append(...cells);
       rows.push(row);
     }
@@ -32,14 +32,14 @@ function renderGrid(cellsLength) {
 
 
   
-  // function renderCells(columnsLength, rowIndex) { ordinamento progressivo
-  function renderCells(columnsLength, numbers) { //ordinamento randomico
+  function renderCells(columnsLength, rowIndex) { //ordinamento progressivo
+ // function renderCells(columnsLength, numbers) { //ordinamento randomico
     const cells = [];
     for (let columnIndex = 0; columnIndex < columnsLength; columnIndex++) {
       const cell = document.createElement('div');
       cell.className = 'cell';
-      // cell.innerText = (rowIndex * columnsLength) + columnIndex + 1; //ordinamento progressivo 
-      cell.innerText = numbers.pop() //ordinamento randomico
+      cell.innerText = (rowIndex * columnsLength) + columnIndex + 1; //ordinamento_progressivo 
+      //cell.innerText = numbers.pop() //ordinamento randomico
       cell.addEventListener('click', function() {
         cell.style.backgroundColor = "#6495ed";
       })
